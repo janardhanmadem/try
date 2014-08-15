@@ -21,10 +21,12 @@ public void doPost(HttpServletRequest request, HttpServletResponse response)
           
     String n=request.getParameter("username");  
     String p=request.getParameter("userpass");  
+    System.out.println("");
           
     if(LoginDao.validate(n, p)){  
         RequestDispatcher rd=request.getRequestDispatcher("servlet2");  
         rd.forward(request,response);  
+        System.out.println("");
     }  
     else{  
         out.print("Sorry username or password error");  
